@@ -1,15 +1,15 @@
 import Foundation
 
 final class MovieFactory {
-    
+
     private let movies: [MovieModel]
     private let genres: [GenreModel]
-    
+
     init(movies: [MovieModel], genres: [GenreModel]) {
         self.movies = movies
         self.genres = genres
     }
-    
+
     func make() -> [MovieViewModel] {
         var result = [MovieViewModel]()
         movies.forEach { movieModel in
@@ -22,7 +22,7 @@ final class MovieFactory {
             if !movieGenre.isEmpty {
                 movieGenre.removeLast(2)
             }
-            
+
             let movie = MovieViewModel(id: movieModel.id,
                               title: movieModel.title,
                               genres: movieGenre,

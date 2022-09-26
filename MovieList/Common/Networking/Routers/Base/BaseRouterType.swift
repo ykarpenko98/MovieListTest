@@ -13,7 +13,7 @@ protocol BaseRouter {
 // MARK: - Default Implementation
 
 extension BaseRouter {
-    var requestHeaders: [String : String]? {
+    var requestHeaders: [String: String]? {
         let header =       [
             "Content-Type": "application/json",
             "Accept": "application/json"
@@ -28,7 +28,7 @@ extension BaseRouter {
     var apiKey: String {
         return "815b63b537c380370911f6cb083031b0"
     }
-    
+
     var asURLRequest: URLRequest {
         var queryItems = queryParameters.map { URLQueryItem(name: $0.key, value: $0.value) }
         if isRequiresAPIKey {

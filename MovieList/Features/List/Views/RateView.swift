@@ -8,11 +8,11 @@ final class RateView: UIView {
         super.init(frame: .zero)
         setup()
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     func setRateValue(rate: Double) {
         if let widthFillViewConstraint = widthFillViewConstraint {
             NSLayoutConstraint.deactivate([widthFillViewConstraint])
@@ -20,11 +20,11 @@ final class RateView: UIView {
         widthFillViewConstraint = fillView.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: rate / 10)
         widthFillViewConstraint?.isActive = true
     }
-    
+
     private func setup() {
         fillView.backgroundColor = .orange
         fillView.translatesAutoresizingMaskIntoConstraints = false
-        
+
         addSubview(fillView)
         NSLayoutConstraint.activate([
             fillView.topAnchor.constraint(equalTo: topAnchor),

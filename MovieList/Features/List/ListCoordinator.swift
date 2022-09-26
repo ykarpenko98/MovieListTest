@@ -5,23 +5,27 @@ final class ListCoordinator: NSObject, CoordinatorType, UINavigationControllerDe
     private var navigationController: UINavigationController?
     var rootViewController: UIViewController?
     var coordinators: [CoordinatorType] = []
-    
+
     init(navigationController: UINavigationController?) {
         self.navigationController = navigationController
     }
-    
+
     func start() {
         navigationController?.delegate = self
-        
+
         let viewModel = ListViewModel(movieService: MovieService())
         let viewController = ListViewController(viewModel: viewModel)
         viewModel.delegate = viewController
         viewModel.navigationDelegate = self
-        
+
         rootViewController = viewController
     }
-    
-    func navigationController(_ navigationController: UINavigationController, didShow viewController: UIViewController, animated: Bool) {
+
+    func navigationController(
+        _ navigationController: UINavigationController,
+        didShow viewController: UIViewController,
+        animated: Bool
+    ) {
         guard let fromViewController = navigationController.transitionCoordinator?.viewController(forKey: .from) else {
             return
         }
@@ -36,13 +40,12 @@ final class ListCoordinator: NSObject, CoordinatorType, UINavigationControllerDe
     }
 }
 
-
 extension ListCoordinator: ListViewModelNavigationDelegate {
     func showDetails(for movie: MovieViewModel) {
         let detailsCoordinator = DetailsCoordinator(navigationController: navigationController, movie: movie)
         detailsCoordinator.start()
         addCoordinator(detailsCoordinator)
-        
+
         navigationController?.pushViewController(detailsCoordinator.rootViewController!, animated: true)
     }
 }

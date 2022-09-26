@@ -21,15 +21,15 @@ protocol DetailsViewModelDelegate: AnyObject {
 }
 
 final class DetailsViewModel: DetailsViewModelType {
-    
+
     private let movie: MovieViewModel
-    
+
     weak var delegate: DetailsViewModelDelegate?
-    
+
     init(movie: MovieViewModel) {
         self.movie = movie
     }
-    
+
     func didLoad() {
         var snapshot = DetailsViewSnapshot()
         snapshot.appendSections([DetailsSection.details])
@@ -41,7 +41,7 @@ final class DetailsViewModel: DetailsViewModelType {
         if let movieCast = movie.cast {
             snapshot.appendItems([.text(title: "Cast", description: movieCast)])
         }
-        
+
         delegate?.updateWithSnapshot(snapshot: snapshot, title: movie.title, rateTitle: "\(movie.rate) 🏆")
     }
 }

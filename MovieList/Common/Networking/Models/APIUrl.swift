@@ -3,7 +3,7 @@ import Foundation
 enum APIUrl {
     case baseUrl
     case imageUrl
-    
+
     var url: String {
         switch self {
         case .baseUrl:

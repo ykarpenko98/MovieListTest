@@ -30,7 +30,7 @@ protocol ListViewModelNavigationDelegate: AnyObject {
 }
 
 final class ListViewModel: ListViewModelType {
-    
+
     private let movieService: MovieServiceType
     private var genres: [GenreModel] = []
     private var snapshot: ListViewSnapshot!
@@ -38,18 +38,18 @@ final class ListViewModel: ListViewModelType {
     private var isLoading: Bool = false
     private var movies: [MovieViewModel] = []
     private var searchText: String = .init()
-    
+
     weak var delegate: ListViewModelDelegate?
     weak var navigationDelegate: ListViewModelNavigationDelegate?
-    
+
     init(movieService: MovieServiceType) {
         self.movieService = movieService
     }
-    
+
     func didLoad() {
         loadGenresAndFirstPage()
     }
-    
+
     func didSelectCell(at indexPath: IndexPath) {
         let items = snapshot.itemIdentifiers(inSection: .list)
         let selectedItem = items[indexPath.row]
@@ -66,9 +66,9 @@ final class ListViewModel: ListViewModelType {
             }
         }
     }
-    
+
     func loadNextPage() {
-        guard !isLoading else {
+        guard !isLoading, currentPage < 6 else {
             return
         }
         isLoading = true
@@ -79,23 +79,23 @@ final class ListViewModel: ListViewModelType {
             loadNextMoviesSearchPage()
         }
     }
-    
+
     func search(string: String) {
         searchText = string
         reloadMovies()
     }
-    
+
     func discardSearch() {
         searchText = .init()
         reloadMovies()
     }
-    
+
     private func reloadMovies() {
         snapshot = nil
         currentPage = 0
         loadNextPage()
     }
-    
+
     private func loadNextMoviesSearchPage() {
         delegate?.setLoadingState(true)
         movieService.getMovieSearchList(page: currentPage, searchString: searchText) { [weak self] result in
@@ -109,11 +109,11 @@ final class ListViewModel: ListViewModelType {
                 self?.isLoading = false
         }
     }
-    
+
     private func loadNextMoviesPage() {
         delegate?.setLoadingState(true)
         movieService.getMovieList(page: currentPage) { [weak self] result in
-            
+
             switch result {
             case .success(let response):
                 self?.makeSnapshotAndApply(responseMovies: response.movies)
@@ -124,7 +124,7 @@ final class ListViewModel: ListViewModelType {
             self?.isLoading = false
         }
     }
-    
+
     private func loadGenresAndFirstPage() {
         delegate?.setLoadingState(true)
         movieService.getMovieGenres { [weak self] result in
@@ -138,7 +138,7 @@ final class ListViewModel: ListViewModelType {
             }
         }
     }
-    
+
     private func makeSnapshotAndApply(responseMovies: [MovieModel]) {
         if snapshot == nil {
             var snapshot = ListViewSnapshot()
@@ -146,11 +146,9 @@ final class ListViewModel: ListViewModelType {
             self.snapshot = snapshot
         }
         let movies = MovieFactory(movies: responseMovies, genres: genres).make()
-        
+
         snapshot.appendItems(movies.map { .film(movie: $0) }, toSection: .list)
-        
+
         delegate?.updateWithSnapshot(snapshot)
     }
 }
-
-

@@ -4,11 +4,6 @@ import Foundation
 struct MovieCreditsModel: Codable {
     let id: Int
     let cast: [CastModel]
-
-    enum CodingKeys: String, CodingKey {
-        case id = "id"
-        case cast = "cast"
-    }
 }
 
 // MARK: - Cast

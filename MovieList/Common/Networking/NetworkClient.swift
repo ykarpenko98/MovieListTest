@@ -1,7 +1,7 @@
 import Foundation
 
 typealias NetworkClientResult = Swift.Result<Data, APIError>
-typealias NetworkClientCompletion = ((NetworkClientResult) -> ())
+typealias NetworkClientCompletion = ((NetworkClientResult) -> Void)
 
 protocol NetworkClientType {
     func performRequest<T: BaseRouter>(_ request: T,
@@ -11,15 +11,15 @@ protocol NetworkClientType {
 // MARK: - Error hanlding Layer
 
 final class NetworkClient: NetworkClientType {
-    
+
     private let serverErrorHandler: ServerErrorHandlerType
     private var requestManager: RequestManagerType
     init(errorHanlder: ServerErrorHandlerType, requestManager: RequestManagerType) {
         self.serverErrorHandler = errorHanlder
         self.requestManager = requestManager
     }
-    
-    func performRequest<T>(_ request: T, completion: NetworkClientCompletion?) where T : BaseRouter {
+
+    func performRequest<T>(_ request: T, completion: NetworkClientCompletion?) where T: BaseRouter {
         requestManager.performRequest(request: request) { (response) in
             completion?(self.handleError(response))
         }
@@ -27,7 +27,7 @@ final class NetworkClient: NetworkClientType {
 }
 
 private extension NetworkClient {
-    
+
     func handleError(_ response: ResponseResultModel) -> NetworkClientResult {
         let statusCode = response.response?.statusCode
         switch (response.responseData, response.error, statusCode) {

@@ -1,27 +1,24 @@
-//
-//  MovieService.swift
-//  MovieList
-//
-//  Created by anduser on 22.09.2022.
-//
-
 import Foundation
 
 protocol MovieServiceType {
-    func getMovieList(page: Int, completion: @escaping (Result<MoviePageModel, APIError>) -> ())
-    
-    func getMovieGenres(completion: @escaping (Result<GenresListModel, APIError>) -> ())
-    
-    func getMovieCredits(movieId: Int, completion: @escaping (Result<MovieCreditsModel, APIError>) -> ())
-    
-    func getMovieSearchList(page: Int, searchString: String, completion: @escaping (Result<MoviePageModel, APIError>) -> ())
+    func getMovieList(page: Int, completion: @escaping (Result<MoviePageModel, APIError>) -> Void)
+
+    func getMovieGenres(completion: @escaping (Result<GenresListModel, APIError>) -> Void)
+
+    func getMovieCredits(movieId: Int, completion: @escaping (Result<MovieCreditsModel, APIError>) -> Void)
+
+    func getMovieSearchList(
+        page: Int,
+        searchString: String,
+        completion: @escaping (Result<MoviePageModel, APIError>) -> Void
+    )
 }
 
 final class MovieService: MovieServiceType {
-    
+
     private let loader = Loader()
-    
-    func getMovieList(page: Int, completion: @escaping (Result<MoviePageModel, APIError>) -> ()) {
+
+    func getMovieList(page: Int, completion: @escaping (Result<MoviePageModel, APIError>) -> Void) {
         let router = MovieRouter.getMovieList(page: page)
         let mapper = DecodableResponseMapper<MoviePageModel>()
         let errorHandler = DefaultErrorHandler()
@@ -31,8 +28,8 @@ final class MovieService: MovieServiceType {
             }
         }
     }
-    
-    func getMovieGenres(completion: @escaping (Result<GenresListModel, APIError>) -> ()) {
+
+    func getMovieGenres(completion: @escaping (Result<GenresListModel, APIError>) -> Void) {
         let router = MovieRouter.getGenres
         let mapper = DecodableResponseMapper<GenresListModel>()
         let errorHandler = DefaultErrorHandler()
@@ -42,8 +39,8 @@ final class MovieService: MovieServiceType {
             }
         }
     }
-    
-    func getMovieCredits(movieId: Int, completion: @escaping (Result<MovieCreditsModel, APIError>) -> ()) {
+
+    func getMovieCredits(movieId: Int, completion: @escaping (Result<MovieCreditsModel, APIError>) -> Void) {
         let router = MovieRouter.getMovieCredits(id: movieId)
         let mapper = DecodableResponseMapper<MovieCreditsModel>()
         let errorHandler = DefaultErrorHandler()
@@ -53,8 +50,12 @@ final class MovieService: MovieServiceType {
             }
         }
     }
-    
-    func getMovieSearchList(page: Int, searchString: String, completion: @escaping (Result<MoviePageModel, APIError>) -> ()) {
+
+    func getMovieSearchList(
+        page: Int,
+        searchString: String,
+        completion: @escaping (Result<MoviePageModel, APIError>) -> Void
+    ) {
         let router = MovieRouter.getMovieSearchList(page: page, searchString: searchString)
         let mapper = DecodableResponseMapper<MoviePageModel>()
         let errorHandler = DefaultErrorHandler()

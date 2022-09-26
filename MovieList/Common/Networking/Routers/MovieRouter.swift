@@ -11,19 +11,19 @@ extension MovieRouter: BaseRouter {
     var body: Codable? {
         nil
     }
-    
+
     var isRequiresAPIKey: Bool {
         true
     }
-    
+
     var requestManager: RequestManagerType {
         URLSessionRequestManager()
     }
-    
+
     var baseUrl: String {
         APIUrl.baseUrl.url
     }
-    
+
     var requestPath: String {
         switch self {
         case .getMovieList:
@@ -36,7 +36,7 @@ extension MovieRouter: BaseRouter {
             return "/search/movie"
         }
     }
-    
+
     var queryParameters: [String: String] {
         switch self {
         case .getGenres:
@@ -49,7 +49,7 @@ extension MovieRouter: BaseRouter {
             return [:]
         }
     }
-    
+
     var requestMethod: HTTPMethod {
         .get
     }

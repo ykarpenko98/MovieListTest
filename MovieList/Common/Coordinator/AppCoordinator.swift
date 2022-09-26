@@ -6,17 +6,17 @@ protocol AppCoordinatorType {
 }
 
 final class AppCoordinator: AppCoordinatorType {
-    
+
     private let window: UIWindow
     private let navigationController: UINavigationController
     private var coordinators: [CoordinatorType] = []
-    
+
     init(window: UIWindow,
          navigationController: UINavigationController = .init()) {
         self.window = window
         self.navigationController = navigationController
     }
-    
+
     func launch() {
         window.rootViewController = navigationController
         let coordinator = ListCoordinator(navigationController: navigationController)

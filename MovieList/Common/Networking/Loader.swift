@@ -1,10 +1,9 @@
-
 import Foundation
 
 final class Loader {
     typealias LoaderResult<Mapper: ResponseMapperType> = Swift.Result<Mapper.ResponseResult, APIError>
-    typealias LoaderResultCompletion<Mapper: ResponseMapperType> = (LoaderResult<Mapper>) -> ()
-    
+    typealias LoaderResultCompletion<Mapper: ResponseMapperType> = (LoaderResult<Mapper>) -> Void
+
     func performRequest<Request: BaseRouter,
                         Mapper: ResponseMapperType,
                         ErrorHandler: ServerErrorHandlerType>(request: Request,
@@ -27,8 +26,7 @@ private extension Loader {
                                                     completion: @escaping LoaderResultCompletion<Mapper>) {
         switch result {
         case .success(let object):
-            mapper.mapResponse(object) {
-                result in
+            mapper.mapResponse(object) { result in
                 switch result {
                 case .success(let mappedResponse):
                     completion(.success(mappedResponse))

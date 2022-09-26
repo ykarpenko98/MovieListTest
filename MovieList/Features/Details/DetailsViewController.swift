@@ -2,25 +2,25 @@ import Foundation
 import UIKit
 
 final class DetailsViewController: BaseViewController {
-    
+
     private let tableView = UITableView()
     private let barButtonItem = UIBarButtonItem()
     private let viewModel: DetailsViewModelType
-    
+
     private var dataSource: UITableViewDiffableDataSource<DetailsSection, DetailsSectionItem>!
-    
+
     init(viewModel: DetailsViewModelType) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         setup()
         setupUI()
         viewModel.didLoad()
@@ -28,9 +28,9 @@ final class DetailsViewController: BaseViewController {
 }
 
 private extension DetailsViewController {
-    
+
     func setup() {
-        dataSource = .init(tableView: tableView, cellProvider: { tableView, indexPath, itemIdentifier in
+        dataSource = .init(tableView: tableView, cellProvider: { tableView, _, itemIdentifier in
             switch itemIdentifier {
             case .text(let title, let description):
                 let cell = tableView.dequeue(reusable: DetailsTextViewCell.self)
@@ -43,7 +43,7 @@ private extension DetailsViewController {
             }
         })
     }
-    
+
     func setupUI() {
         tableView.register(class: DetailsTextViewCell.self)
         tableView.register(class: DetailsImageViewCell.self)

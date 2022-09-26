@@ -7,7 +7,7 @@ enum APIError: CustomStringConvertible, CustomDebugStringConvertible, Error {
     case objectSerialization
     case uploadEncoding(reason: String?)
     case cancelled
-    
+
     var description: String {
         switch self {
         case .server(let details):
@@ -24,6 +24,6 @@ enum APIError: CustomStringConvertible, CustomDebugStringConvertible, Error {
             return "Cancelled"
         }
     }
-    
+
     var debugDescription: String { description }
 }

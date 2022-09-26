@@ -4,7 +4,7 @@ import UIKit
 protocol CoordinatorType: AnyObject {
     var rootViewController: UIViewController? { get }
     var coordinators: [CoordinatorType] { get set }
-    
+
     func start()
 }
 

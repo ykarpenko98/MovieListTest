@@ -1,0 +1,401 @@
+{
+  "page": 3,
+  "results": [
+    {
+      "adult": false,
+      "backdrop_path": "/5L6RPHHUFlsliTqKRmUxFnIkXpR.jpg",
+      "genre_ids": [
+        28,
+        14,
+        27,
+        35
+      ],
+      "id": 755566,
+      "original_language": "en",
+      "original_title": "Day Shift",
+      "overview": "An LA vampire hunter has a week to come up with the cash to pay for his kid's tuition and braces. Trying to make a living these days just might kill him.",
+      "popularity": 900.703,
+      "poster_path": "/bI7lGR5HuYlENlp11brKUAaPHuO.jpg",
+      "release_date": "2022-08-10",
+      "title": "Day Shift",
+      "video": false,
+      "vote_average": 6.9,
+      "vote_count": 1062
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/bL7VIHQ4Nl0hZMw8ZeX6byoEEZJ.jpg",
+      "genre_ids": [
+        878,
+        35,
+        28
+      ],
+      "id": 1006851,
+      "original_language": "en",
+      "original_title": "Office Invasion",
+      "overview": "Three friends come together to defend their valuable mining company from…aliens?! What could possibly go wrong?",
+      "popularity": 1156.946,
+      "poster_path": "/khcVwO0gwguC1CndbxtH1bzk4aj.jpg",
+      "release_date": "2022-08-10",
+      "title": "Office Invasion",
+      "video": false,
+      "vote_average": 5.7,
+      "vote_count": 81
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/nYla7faWqM3nLCY9arQH1DwXC84.jpg",
+      "genre_ids": [
+        16,
+        12,
+        10751
+      ],
+      "id": 576925,
+      "original_language": "ru",
+      "original_title": "Buka. My favorite monster",
+      "overview": "A scandal in the royal family: the wayward princess Barbara escaped from the palace and went through the forest in search of a handsome prince. However, instead of the cherished meeting with her beloved, she is captured by Buka, the most dangerous robber of the kingdom. But it quickly becomes clear that the brisk princess is ready to turn Buka's life into a nightmare, just to reach her goal. So the restless Varvara begins to establish her own order in the forest.",
+      "popularity": 1017.352,
+      "poster_path": "/xIbEHAqwK5N7PJJYmbwmxuvC7fL.jpg",
+      "release_date": "2022-01-27",
+      "title": "My Sweet Monster",
+      "video": false,
+      "vote_average": 6,
+      "vote_count": 10
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/lP61RjFsniAfkdbbxjAHHlEqhLk.jpg",
+      "genre_ids": [
+        18
+      ],
+      "id": 911129,
+      "original_language": "fr",
+      "original_title": "Sous emprise",
+      "overview": "Roxana Aubrey decides to drop her studies and escape her life in Paris for a free diving course in the south of France. She is quickly pulled into a life that reaches new depths brought by the weight of an ocean's descent.",
+      "popularity": 1016.705,
+      "poster_path": "/fUdeneiMUQkE1Yb3Qx7dML0HVf.jpg",
+      "release_date": "2022-09-09",
+      "title": "No Limit",
+      "video": false,
+      "vote_average": 6.3,
+      "vote_count": 140
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/hwUxHPkuUleJeoick4uZsrKDXxF.jpg",
+      "genre_ids": [
+        16,
+        878,
+        12,
+        28,
+        10751
+      ],
+      "id": 718789,
+      "original_language": "en",
+      "original_title": "Lightyear",
+      "overview": "Legendary Space Ranger Buzz Lightyear embarks on an intergalactic adventure alongside a group of ambitious recruits and his robot companion Sox.",
+      "popularity": 974.756,
+      "poster_path": "/ox4goZd956BxqJH6iLwhWPL9ct4.jpg",
+      "release_date": "2022-06-15",
+      "title": "Lightyear",
+      "video": false,
+      "vote_average": 7.2,
+      "vote_count": 2123
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/6hn3bV5mrXBhnU30caILB14xRfh.jpg",
+      "genre_ids": [
+        16
+      ],
+      "id": 1012801,
+      "original_language": "en",
+      "original_title": "Barbie: Mermaid Power",
+      "overview": "Join Barbie “Brooklyn” Roberts, Barbie “Malibu” Roberts, and her sisters Skipper, Stacie, and Chelsea on an underwater adventure as they transform into mermaids to help save the world of Pacifica! In Barbie Mermaid Power™, Barbie and Barbie are summoned by Isla (from Dolphin Magic) to compete to be the underwater Power Keeper in a series of challenges designed to find their inner powers. Through these competitions, they discover whether they are mermaids of Earth, Air, Water, or Fire, all while making new animal and mermaid friends. In this fish-tale of friendship, adventure, and bravery, Barbie, Barbie, and family experience first-hand what it’s like to balance the worlds above and below the sea and learn a lesson in finding their inner powers along the way.",
+      "popularity": 884.096,
+      "poster_path": "/8qb8cLDBAWdahrtixN2mQdI6e52.jpg",
+      "release_date": "2022-07-17",
+      "title": "Barbie: Mermaid Power",
+      "video": false,
+      "vote_average": 7.5,
+      "vote_count": 36
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/9bColKVEAaWfmOLiLZoUhdYfevy.jpg",
+      "genre_ids": [
+        16,
+        10751,
+        35,
+        878
+      ],
+      "id": 1010818,
+      "original_language": "en",
+      "original_title": "Groot's First Steps",
+      "overview": "Following the events of “Guardians of the Galaxy Vol. 1,” Baby Groot is finally ready to try taking his first steps out of his pot—only to learn you have to walk before you can run.",
+      "popularity": 970.613,
+      "poster_path": "/1ifiV9ZJD4tC3tRYcnLIzH0meaB.jpg",
+      "release_date": "2022-08-10",
+      "title": "Groot's First Steps",
+      "video": false,
+      "vote_average": 7.4,
+      "vote_count": 153
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/iGHFjqxH5c8zRibnZbh9qEYTBho.jpg",
+      "genre_ids": [
+        28
+      ],
+      "id": 1008779,
+      "original_language": "es",
+      "original_title": "La Princesa",
+      "overview": "Refusing to marry a drug lord, Grecia is determined to pay her father's debt herself. To earn the money, she decides to bet in the Sinaloa palenques, where she meets Armando. He is immediately captivated by her beauty and fearless attitude. But, little does he know that falling for her will be his most dangerous endeavor. Based on the famous corrido hit \"La Princesa\", by Alfredo Ríos \"El Komander\".",
+      "popularity": 843.787,
+      "poster_path": "/ksxiXqwPuEjh3gct1zUpyzNoQFt.jpg",
+      "release_date": "2022-02-01",
+      "title": "The princess",
+      "video": false,
+      "vote_average": 7.4,
+      "vote_count": 61
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/l99dylTOAMkwKSr54X5ytiEtnLA.jpg",
+      "genre_ids": [
+        14,
+        12,
+        28
+      ],
+      "id": 919355,
+      "original_language": "en",
+      "original_title": "Dragon Knight",
+      "overview": "Many years after the war has been lost, and all the dragons slain, a lone knight travels the lands of Agonos seeking to raise an army against the demon lord Abaddon. When a healer's vision reveals that one dragon still lives, and together with an eager young squire, the knight sets off in search of the fabled creature. As the armies of Abaddon descend on the human kingdoms, the dragon is their last hope of fending off the horde, before it lays waste to the lands of men. But does the creature even exist? And if it does, will it fight for them once more?",
+      "popularity": 901.74,
+      "poster_path": "/zkGFADykBtfPfTv7YJooxTH52ph.jpg",
+      "release_date": "2022-03-21",
+      "title": "Dragon Knight",
+      "video": false,
+      "vote_average": 6.9,
+      "vote_count": 28
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/fOy2Jurz9k6RnJnMUMRDAgBwru2.jpg",
+      "genre_ids": [
+        16,
+        10751,
+        35,
+        14
+      ],
+      "id": 508947,
+      "original_language": "en",
+      "original_title": "Turning Red",
+      "overview": "Thirteen-year-old Mei is experiencing the awkwardness of being a teenager with a twist – when she gets too excited, she transforms into a giant red panda.",
+      "popularity": 826.254,
+      "poster_path": "/qsdjk9oAKSQMWs0Vt5Pyfh6O4GZ.jpg",
+      "release_date": "2022-03-10",
+      "title": "Turning Red",
+      "video": false,
+      "vote_average": 7.5,
+      "vote_count": 3279
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/6cpRpfD3isvluFwXDGSiDVyibPJ.jpg",
+      "genre_ids": [
+        10749,
+        18
+      ],
+      "id": 829560,
+      "original_language": "pl",
+      "original_title": "The Next 365 Days",
+      "overview": "Laura and Massimo's relationship hangs in the balance as they try to overcome trust issues while a tenacious Nacho works to push them apart.",
+      "popularity": 839.413,
+      "poster_path": "/6FsGeIp7heHm5eh4tIxTzHIRxmt.jpg",
+      "release_date": "2022-08-19",
+      "title": "The Next 365 Days",
+      "video": false,
+      "vote_average": 6.7,
+      "vote_count": 450
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/4bsz75kSdeVQm9u5aD87ciRpYVW.jpg",
+      "genre_ids": [
+        16,
+        10751,
+        35,
+        878
+      ],
+      "id": 1010821,
+      "original_language": "en",
+      "original_title": "Groot Takes a Bath",
+      "overview": "Everybody needs some alone time to relax and wash up, but things go quite differently when you’re a Flora Colossi toddler.",
+      "popularity": 846.892,
+      "poster_path": "/sN7FJP06TsNNtK9Jr77dc25yI82.jpg",
+      "release_date": "2022-08-10",
+      "title": "Groot Takes a Bath",
+      "video": false,
+      "vote_average": 7,
+      "vote_count": 136
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/b0PlSFdDwbyK0cf5RxwDpaOJQvQ.jpg",
+      "genre_ids": [
+        80,
+        9648,
+        53
+      ],
+      "id": 414906,
+      "original_language": "en",
+      "original_title": "The Batman",
+      "overview": "In his second year of fighting crime, Batman uncovers corruption in Gotham City that connects to his own family while facing a serial killer known as the Riddler.",
+      "popularity": 857.881,
+      "poster_path": "/74xTEgt7R36Fpooo50r9T25onhq.jpg",
+      "release_date": "2022-03-01",
+      "title": "The Batman",
+      "video": false,
+      "vote_average": 7.7,
+      "vote_count": 6307
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/1U5zz2Jvt2L7hXHf1ZN1n74Zx8j.jpg",
+      "genre_ids": [
+        28,
+        53,
+        80
+      ],
+      "id": 769636,
+      "original_language": "es",
+      "original_title": "Código Emperador",
+      "overview": "Follows Juan, an agent working for the intelligence services, who also reports to a parallel unit involved in illegal activities.",
+      "popularity": 745.598,
+      "poster_path": "/8VjVLMiPm598Kg6XmKk5m1fz0p7.jpg",
+      "release_date": "2022-03-18",
+      "title": "Code Name: Emperor",
+      "video": false,
+      "vote_average": 5.9,
+      "vote_count": 97
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/lzbrMjEnH34DzTfllRb6XxhlaZu.jpg",
+      "genre_ids": [
+        35,
+        18
+      ],
+      "id": 81774,
+      "original_language": "fr",
+      "original_title": "Les Exploits d'un jeune Don Juan",
+      "overview": "Roger is a 16-year-old who seeks to lose his virginity in this erotic drama. His initial efforts are unsuccessful, but World War I breaks out and men are seen marching off to battle. Roger goes overboard when he is presented with several amorous opportunities.",
+      "popularity": 556.396,
+      "poster_path": "/xvtRgQIRegLjsjaIkKQbh0hk3Qy.jpg",
+      "release_date": "1986-11-04",
+      "title": "Exploits of a Young Don Juan",
+      "video": false,
+      "vote_average": 5.5,
+      "vote_count": 106
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/1Ds7xy7ILo8u2WWxdnkJth1jQVT.jpg",
+      "genre_ids": [
+        28,
+        12,
+        35
+      ],
+      "id": 752623,
+      "original_language": "en",
+      "original_title": "The Lost City",
+      "overview": "Reclusive author Loretta Sage writes about exotic places in her popular adventure novels that feature a handsome cover model named Alan. While on tour promoting her new book with Alan, Loretta gets kidnapped by an eccentric billionaire who hopes she can lead him to the ancient city's lost treasure that featured in her latest story. Alan, determined to prove he can be a hero in real life and not just on the pages of her books, sets off to rescue her.",
+      "popularity": 911.193,
+      "poster_path": "/neMZH82Stu91d3iqvLdNQfqPPyl.jpg",
+      "release_date": "2022-03-24",
+      "title": "The Lost City",
+      "video": false,
+      "vote_average": 6.8,
+      "vote_count": 1965
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/qjGrUmKW78MCFG8PTLDBp67S27p.jpg",
+      "genre_ids": [
+        16,
+        28,
+        12,
+        14
+      ],
+      "id": 635302,
+      "original_language": "ja",
+      "original_title": "劇場版「鬼滅の刃」無限列車編",
+      "overview": "Tanjirō Kamado, joined with Inosuke Hashibira, a boy raised by boars who wears a boar's head, and Zenitsu Agatsuma, a scared boy who reveals his true power when he sleeps, boards the Infinity Train on a new mission with the Fire Hashira, Kyōjurō Rengoku, to defeat a demon who has been tormenting the people and killing the demon slayers who oppose it!",
+      "popularity": 828.126,
+      "poster_path": "/h8Rb9gBr48ODIwYUttZNYeMWeUU.jpg",
+      "release_date": "2020-10-16",
+      "title": "Demon Slayer -Kimetsu no Yaiba- The Movie: Mugen Train",
+      "video": false,
+      "vote_average": 8.3,
+      "vote_count": 2704
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/b1L7qevxiVpkVFq4dmdQPGFPWH0.jpg",
+      "genre_ids": [
+        27
+      ],
+      "id": 836225,
+      "original_language": "en",
+      "original_title": "The Exorcism of God",
+      "overview": "An American priest working in Mexico is considered a saint by many local parishioners. However, due to a botched exorcism, he carries a secret that’s eating him alive until he gets an opportunity to face his demon one final time.",
+      "popularity": 963.857,
+      "poster_path": "/hangTmbxpSV4gpHG7MgSlCWSSFa.jpg",
+      "release_date": "2022-03-11",
+      "title": "The Exorcism of God",
+      "video": false,
+      "vote_average": 7.3,
+      "vote_count": 619
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/r26Qj2HfAv6rPXzULLpdDWrkwrT.jpg",
+      "genre_ids": [
+        53
+      ],
+      "id": 852448,
+      "original_language": "en",
+      "original_title": "I Came By",
+      "overview": "A rebellious young graffiti artist, who targets the homes of the wealthy elite, discovers a shocking secret that leads him on a journey endangering himself and those closest to him.",
+      "popularity": 859.813,
+      "poster_path": "/856bLLUvEYu3dRDXCCoRE7oxO0V.jpg",
+      "release_date": "2022-08-19",
+      "title": "I Came By",
+      "video": false,
+      "vote_average": 6.4,
+      "vote_count": 296
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/qViFGWCHaSmW4gP00RGh3xjMjsP.jpg",
+      "genre_ids": [
+        27,
+        9648
+      ],
+      "id": 758724,
+      "original_language": "en",
+      "original_title": "The Cellar",
+      "overview": "When Keira Woods' daughter mysteriously vanishes in the cellar of their new house in the country, she soon discovers there is an ancient and powerful entity controlling their home that she will have to face or risk losing her family's souls forever.",
+      "popularity": 943.909,
+      "poster_path": "/rtfGeS5WMXA6PtikIYUmYTSbVdg.jpg",
+      "release_date": "2022-03-25",
+      "title": "The Cellar",
+      "video": false,
+      "vote_average": 6.6,
+      "vote_count": 239
+    }
+  ],
+  "total_pages": 35224,
+  "total_results": 704462
+}

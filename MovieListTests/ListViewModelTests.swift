@@ -1,36 +1,101 @@
-//
-//  MovieListTests.swift
-//  MovieListTests
-//
-//  Created by anduser on 20.09.2022.
-//
-
 import XCTest
 @testable import MovieList
 
-class MovieListTests: XCTestCase {
+class ListViewModelTests: XCTestCase {
 
+    private var sut: ListViewModel!
+    private var outputDelegate: SpyListViewModelDelegate!
+    private var navigationDelegate: SpyListViewModelNavigationDelegate!
+    private var movieService: MockMovieService!
+    
     override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        outputDelegate = SpyListViewModelDelegate()
+        navigationDelegate = SpyListViewModelNavigationDelegate()
+        movieService = MockMovieService()
+        sut = ListViewModel(movieService: movieService)
+        sut.delegate = outputDelegate
+        sut.navigationDelegate = navigationDelegate
     }
 
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    func test_MovieListViewModel_InitialLoad() throws {
+        sut.didLoad()
+        
+        XCTAssertEqual(outputDelegate.displayErrorArr.count, 0)
+        XCTAssertEqual(outputDelegate.updateWithSnapshotArr.count, 1)
+        XCTAssertEqual(outputDelegate.updateWithSnapshotArr[0].numberOfItems, 20)
+        XCTAssertEqual(outputDelegate.setLoadingStateArr.count, 4)
     }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
+    
+    func test_MovieListViewModel_LoadNextPage() {
+        sut.didLoad()
+        sut.loadNextPage()
+        
+        XCTAssertEqual(outputDelegate.displayErrorArr.count, 0)
+        XCTAssertEqual(outputDelegate.updateWithSnapshotArr.count, 2)
+        XCTAssertEqual(outputDelegate.setLoadingStateArr.count, 6)
     }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    
+    func test_MovieListViewModel_StartSearch() {
+        sut.didLoad()
+        sut.search(string: "21")
+        
+        XCTAssertEqual(outputDelegate.displayErrorArr.count, 0)
+        XCTAssertEqual(outputDelegate.updateWithSnapshotArr.count, 2)
+        XCTAssertEqual(outputDelegate.setLoadingStateArr.count, 6)
     }
+    
+    func test_MovieListViewModel_didSelectItem() {
+        sut.didLoad()
+        sut.didSelectCell(at: IndexPath(row: 2, section: 0))
+        
+        XCTAssertEqual(navigationDelegate.showDetailsMovieArr, [
+            MovieViewModel(id: 576925, title: "My Sweet Monster", genres: "ADVENTURE, ANIMATION, FAMILY", rate: 6.0, overview: "A scandal in the royal family: the wayward princess Barbara escaped from the palace and went through the forest in search of a handsome prince. However, instead of the cherished meeting with her beloved, she is captured by Buka, the most dangerous robber of the kingdom. But it quickly becomes clear that the brisk princess is ready to turn Buka\'s life into a nightmare, just to reach her goal. So the restless Varvara begins to establish her own order in the forest.", posterImagePath: "/xIbEHAqwK5N7PJJYmbwmxuvC7fL.jpg", cast: "Edoardo Pesce, Alessandro Roja, Alessandra Mastronardi, Christian De Sica, Francesco Bruni, Massimiliano Rossi, Michael Schermi, Gabriele Cristini, Christian Monaldi, Mauro Aversano, Nana Funabiki, Carlo Valli")
+        ])
+    }
+}
 
+class MockMovieService: MovieServiceType {
+    func getMovieList(page: Int, completion: @escaping (Result<MoviePageModel, APIError>) -> ()) {
+        completion(.success(Helper().makeMoviePageModel()))
+    }
+    
+    func getMovieGenres(completion: @escaping (Result<GenresListModel, APIError>) -> ()) {
+        completion(.success(Helper().makeGenresListModel()))
+    }
+    
+    func getMovieCredits(movieId: Int, completion: @escaping (Result<MovieCreditsModel, APIError>) -> ()) {
+        completion(.success(Helper().makeMovieCreditsList()))
+    }
+    
+    func getMovieSearchList(page: Int, searchString: String, completion: @escaping (Result<MoviePageModel, APIError>) -> ()) {
+        completion(.success(Helper().makeMoviePageModel()))
+    }
+}
+
+class SpyListViewModelDelegate: ListViewModelDelegate {
+    
+    private(set) var setLoadingStateArr: [Bool] = []
+    private(set) var updateWithSnapshotArr: [ListViewSnapshot] = []
+    private(set) var displayErrorArr: [String] = []
+    
+    func setLoadingState(_ isLoading: Bool) {
+        setLoadingStateArr.append(isLoading)
+    }
+    
+    func updateWithSnapshot(_ snapshot: ListViewSnapshot) {
+        updateWithSnapshotArr.append(snapshot)
+    }
+    
+    func displayError(message: String) {
+        displayErrorArr.append(message)
+    }
+}
+
+class SpyListViewModelNavigationDelegate: ListViewModelNavigationDelegate {
+    
+    private(set) var showDetailsMovieArr: [MovieViewModel] = []
+    
+    func showDetails(for movie: MovieViewModel) {
+        showDetailsMovieArr.append(movie)
+    }
 }

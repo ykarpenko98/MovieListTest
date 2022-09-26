@@ -38,7 +38,7 @@ final class ListCoordinator: NSObject, CoordinatorType, UINavigationControllerDe
 
 
 extension ListCoordinator: ListViewModelNavigationDelegate {
-    func showDetails(for movie: Movie) {
+    func showDetails(for movie: MovieViewModel) {
         let detailsCoordinator = DetailsCoordinator(navigationController: navigationController, movie: movie)
         detailsCoordinator.start()
         addCoordinator(detailsCoordinator)

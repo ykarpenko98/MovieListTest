@@ -29,7 +29,7 @@ final class ListViewCell: UITableViewCell {
         posterImageView.image = nil
     }
     
-    func configure(with model: Movie) {
+    func configure(with model: MovieViewModel) {
         titleLabel.text = model.title
         genreLabel.text = model.genres
         rateLabel.text = String(model.rate)
@@ -56,14 +56,14 @@ final class ListViewCell: UITableViewCell {
 private extension ListViewCell {
     func setupUI() {
         autoresizesSubviews = true
-        contentView.backgroundColor = .darkGray
+        contentView.backgroundColor = #colorLiteral(red: 0.1098036841, green: 0.1098041013, blue: 0.1183908954, alpha: 1)
         backgroundColor = .black
         selectionStyle = .none
         
-        titleLabel.font = .boldSystemFont(ofSize: 24)
+        titleLabel.font = .boldSystemFont(ofSize: 20)
         titleLabel.textColor = .white
         
-        genreLabel.font = .systemFont(ofSize: 12)
+        genreLabel.font = .systemFont(ofSize: 10)
         genreLabel.textColor = .gray
         
         chevronRightImageView.image = .init(systemName: "chevron.right")

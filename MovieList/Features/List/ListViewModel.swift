@@ -8,7 +8,7 @@ enum ListSection: String, CaseIterable {
 }
 
 enum ListSectionItem: Hashable {
-    case film(movie: Movie)
+    case film(movie: MovieViewModel)
 }
 
 protocol ListViewModelType {
@@ -26,7 +26,7 @@ protocol ListViewModelDelegate: AnyObject {
 }
 
 protocol ListViewModelNavigationDelegate: AnyObject {
-    func showDetails(for movie: Movie)
+    func showDetails(for movie: MovieViewModel)
 }
 
 final class ListViewModel: ListViewModelType {
@@ -34,9 +34,9 @@ final class ListViewModel: ListViewModelType {
     private let movieService: MovieServiceType
     private var genres: [GenreModel] = []
     private var snapshot: ListViewSnapshot!
-    private var currentPage: Int = 1
+    private var currentPage: Int = 0
     private var isLoading: Bool = false
-    private var movies: [Movie] = []
+    private var movies: [MovieViewModel] = []
     private var searchText: String = .init()
     
     weak var delegate: ListViewModelDelegate?
@@ -92,7 +92,7 @@ final class ListViewModel: ListViewModelType {
     
     private func reloadMovies() {
         snapshot = nil
-        currentPage = 1
+        currentPage = 0
         loadNextPage()
     }
     

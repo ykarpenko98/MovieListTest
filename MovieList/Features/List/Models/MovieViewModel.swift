@@ -1,6 +1,6 @@
 import Foundation
 
-struct Movie: Hashable {
+struct MovieViewModel: Hashable {
     let id: Int
     let title: String
     let genres: String

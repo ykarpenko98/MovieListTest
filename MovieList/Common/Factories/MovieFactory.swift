@@ -10,8 +10,8 @@ final class MovieFactory {
         self.genres = genres
     }
     
-    func make() -> [Movie] {
-        var result = [Movie]()
+    func make() -> [MovieViewModel] {
+        var result = [MovieViewModel]()
         movies.forEach { movieModel in
             var movieGenre = genres
                 .filter { movieModel.genreIds.contains($0.id) }
@@ -23,7 +23,7 @@ final class MovieFactory {
                 movieGenre.removeLast(2)
             }
             
-            let movie = Movie(id: movieModel.id,
+            let movie = MovieViewModel(id: movieModel.id,
                               title: movieModel.title,
                               genres: movieGenre,
                               rate: movieModel.voteAverage,

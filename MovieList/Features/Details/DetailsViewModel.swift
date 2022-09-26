@@ -22,11 +22,11 @@ protocol DetailsViewModelDelegate: AnyObject {
 
 final class DetailsViewModel: DetailsViewModelType {
     
-    private let movie: Movie
+    private let movie: MovieViewModel
     
     weak var delegate: DetailsViewModelDelegate?
     
-    init(movie: Movie) {
+    init(movie: MovieViewModel) {
         self.movie = movie
     }
     

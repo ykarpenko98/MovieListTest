@@ -51,7 +51,7 @@ private extension ListViewController {
         searchBar.translatesAutoresizingMaskIntoConstraints = false
         searchBar.tintColor = .lightGray
         searchBar.barTintColor = .black
-        searchBar.searchBarStyle = .prominent
+        searchBar.searchBarStyle = .default
         searchBar.searchTextField.textColor = .lightGray
         searchBar.placeholder = "Search"
         searchBar.delegate = self

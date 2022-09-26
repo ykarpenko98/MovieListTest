@@ -11,13 +11,13 @@ import UIKit
 final class DetailsCoordinator: NSObject, CoordinatorType {
     
     private let navigationController: UINavigationController?
-    private let movie: Movie
+    private let movie: MovieViewModel
     
     var rootViewController: UIViewController?
     var coordinators: [CoordinatorType] = []
     
     init(navigationController: UINavigationController?,
-         movie: Movie) {
+         movie: MovieViewModel) {
         self.navigationController = navigationController
         self.movie = movie
     }

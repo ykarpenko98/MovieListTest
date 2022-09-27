@@ -55,7 +55,9 @@ enum DepartmentModel: String, Codable {
 extension MovieCreditsModel {
     var castDescription: String {
         var cast = cast.map { $0.name }.reduce("", { "\($0)\($1), "})
-        cast.removeLast(2)
+        if !cast.isEmpty {
+            cast.removeLast(2)
+        }
         return cast
     }
 }

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		49B850279B7A34A3FA306AD3 /* Pods_MovieListTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED582B99BEACAD498D2D1DD2 /* Pods_MovieListTests.framework */; };
 		CA1B8B6D28E2FD5700DF173A /* EmptyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1B8B6C28E2FD5700DF173A /* EmptyCell.swift */; };
+		CA1B8B6F28E318DC00DF173A /* DetailsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1B8B6E28E318DC00DF173A /* DetailsViewModelTests.swift */; };
 		CA2FC41D28DC850A00A0FE32 /* UITableView+Cells.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA2FC41C28DC850A00A0FE32 /* UITableView+Cells.swift */; };
 		CA41991F28E1A38900D41FC3 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA41991E28E1A38900D41FC3 /* Helper.swift */; };
 		CA41992428E1AE5600D41FC3 /* GenresList.json in Resources */ = {isa = PBXBuildFile; fileRef = CA41992128E1AE5600D41FC3 /* GenresList.json */; };
@@ -76,6 +77,7 @@
 		9A7E1099D6BBA5B1AE7D579B /* Pods-MovieList.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovieList.release.xcconfig"; path = "Target Support Files/Pods-MovieList/Pods-MovieList.release.xcconfig"; sourceTree = "<group>"; };
 		B2517318AF31F56EF539BB2E /* Pods-MovieListTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovieListTests.debug.xcconfig"; path = "Target Support Files/Pods-MovieListTests/Pods-MovieListTests.debug.xcconfig"; sourceTree = "<group>"; };
 		CA1B8B6C28E2FD5700DF173A /* EmptyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyCell.swift; sourceTree = "<group>"; };
+		CA1B8B6E28E318DC00DF173A /* DetailsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewModelTests.swift; sourceTree = "<group>"; };
 		CA2FC41C28DC850A00A0FE32 /* UITableView+Cells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Cells.swift"; sourceTree = "<group>"; };
 		CA41991E28E1A38900D41FC3 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		CA41992128E1AE5600D41FC3 /* GenresList.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = GenresList.json; sourceTree = "<group>"; };
@@ -246,6 +248,7 @@
 				CAAC094628DA2AD6006B8E2D /* ListViewModelTests.swift */,
 				CA41991E28E1A38900D41FC3 /* Helper.swift */,
 				CA41992728E1B7FF00D41FC3 /* MovieFactoryTests.swift */,
+				CA1B8B6E28E318DC00DF173A /* DetailsViewModelTests.swift */,
 			);
 			path = MovieListTests;
 			sourceTree = "<group>";
@@ -677,6 +680,7 @@
 				CAAC094728DA2AD6006B8E2D /* ListViewModelTests.swift in Sources */,
 				CA41992828E1B7FF00D41FC3 /* MovieFactoryTests.swift in Sources */,
 				CA41991F28E1A38900D41FC3 /* Helper.swift in Sources */,
+				CA1B8B6F28E318DC00DF173A /* DetailsViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

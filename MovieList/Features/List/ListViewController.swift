@@ -1,7 +1,7 @@
 import UIKit
 
 final class ListViewController: BaseViewController {
-    
+
     private enum Constants {
         static let rowHeight: CGFloat = 120
         static let loadNextPageOffset: Int = 3
@@ -40,6 +40,8 @@ private extension ListViewController {
                 let cell = tableView.dequeue(reusable: ListViewCell.self, for: indexPath)
                 cell.configure(with: movie)
                 return cell
+            case .empty:
+                return tableView.dequeue(reusable: EmptyCell.self, for: indexPath)
             }
         })
     }
@@ -71,6 +73,7 @@ private extension ListViewController {
 
     func setupTableView() {
         tableView.register(class: ListViewCell.self)
+        tableView.register(class: EmptyCell.self)
         tableView.separatorColor = .gray
         tableView.backgroundColor = .black
         tableView.clipsToBounds = true

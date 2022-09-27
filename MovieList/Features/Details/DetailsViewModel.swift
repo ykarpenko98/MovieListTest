@@ -13,6 +13,7 @@ enum DetailsSectionItem: Hashable {
 }
 
 protocol DetailsViewModelType {
+    var snapshot: DetailsViewSnapshot! { get }
     func didLoad()
 }
 
@@ -23,6 +24,8 @@ protocol DetailsViewModelDelegate: AnyObject {
 final class DetailsViewModel: DetailsViewModelType {
 
     private let movie: MovieViewModel
+
+    var snapshot: DetailsViewSnapshot!
 
     weak var delegate: DetailsViewModelDelegate?
 
@@ -41,7 +44,7 @@ final class DetailsViewModel: DetailsViewModelType {
         if let movieCast = movie.cast {
             snapshot.appendItems([.text(title: "Cast", description: movieCast)])
         }
-
+        self.snapshot = snapshot
         delegate?.updateWithSnapshot(snapshot: snapshot, title: movie.title, rateTitle: "\(movie.rate) 🏆")
     }
 }

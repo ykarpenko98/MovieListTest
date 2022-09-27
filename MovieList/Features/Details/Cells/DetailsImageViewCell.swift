@@ -17,6 +17,7 @@ final class DetailsImageViewCell: UITableViewCell {
 
     func configure(with posterImagePath: String?) {
         guard let posterImagePath = posterImagePath else {
+            posterImageView.image = UIImage(systemName: "xmark")
             return
         }
         resourceService.getImagePoster(imagePath: posterImagePath) { [weak self] result in

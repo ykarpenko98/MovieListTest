@@ -59,23 +59,36 @@ class ListViewModelTests: XCTestCase {
                            cast: "Edoardo Pesce, Alessandro Roja, Alessandra Mastronardi, Christian De Sica, Francesco Bruni, Massimiliano Rossi, Michael Schermi, Gabriele Cristini, Christian Monaldi, Mauro Aversano, Nana Funabiki, Carlo Valli")
         ])
     }
+
+    func test_MovieListViewModel_EmptyResult() {
+        movieService.getMovieListMock = .success(.init(page: 1, movies: [], totalPages: 0, totalResults: 0))
+        sut.didLoad()
+        XCTAssertEqual(outputDelegate.displayErrorArr.count, 0)
+        XCTAssertEqual(outputDelegate.updateWithSnapshotArr.count, 1)
+        XCTAssertEqual(outputDelegate.updateWithSnapshotArr[0].itemIdentifiers, [.empty])
+        XCTAssertEqual(outputDelegate.setLoadingStateArr.count, 4)
+    }
 }
 
 class MockMovieService: MovieServiceType {
+
+    var getMovieListMock: Result<MoviePageModel, APIError> = .success(Helper().makeMoviePageModel())
     func getMovieList(page: Int, completion: @escaping (Result<MoviePageModel, APIError>) -> Void) {
-        completion(.success(Helper().makeMoviePageModel()))
+        completion(getMovieListMock)
     }
 
+    var getMovieGenresMock: Result<GenresListModel, APIError> = .success(Helper().makeGenresListModel())
     func getMovieGenres(completion: @escaping (Result<GenresListModel, APIError>) -> Void) {
-        completion(.success(Helper().makeGenresListModel()))
+        completion(getMovieGenresMock)
     }
 
+    var getMovieCreditsMock: Result<MovieCreditsModel, APIError> = .success(Helper().makeMovieCreditsList())
     func getMovieCredits(movieId: Int, completion: @escaping (Result<MovieCreditsModel, APIError>) -> Void) {
-        completion(.success(Helper().makeMovieCreditsList()))
+        completion(getMovieCreditsMock)
     }
-
+    var getMovieSearchListMock: Result<MoviePageModel, APIError> = .success(Helper().makeMoviePageModel())
     func getMovieSearchList(page: Int, searchString: String, completion: @escaping (Result<MoviePageModel, APIError>) -> Void) {
-        completion(.success(Helper().makeMoviePageModel()))
+        completion(getMovieSearchListMock)
     }
 }
 

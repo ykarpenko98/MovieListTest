@@ -9,6 +9,7 @@ enum ListSection: String, CaseIterable {
 
 enum ListSectionItem: Hashable {
     case film(movie: MovieViewModel)
+    case empty
 }
 
 protocol ListViewModelType {
@@ -36,7 +37,6 @@ final class ListViewModel: ListViewModelType {
     private var snapshot: ListViewSnapshot!
     private var currentPage: Int = 0
     private var isLoading: Bool = false
-    private var movies: [MovieViewModel] = []
     private var searchText: String = .init()
 
     weak var delegate: ListViewModelDelegate?
@@ -103,6 +103,7 @@ final class ListViewModel: ListViewModelType {
                 case .success(let response):
                     self?.makeSnapshotAndApply(responseMovies: response.movies)
                 case .failure(let error):
+                    self?.makeSnapshotAndApply(responseMovies: [])
                     self?.delegate?.displayError(message: error.description)
                 }
                 self?.delegate?.setLoadingState(false)
@@ -118,6 +119,7 @@ final class ListViewModel: ListViewModelType {
             case .success(let response):
                 self?.makeSnapshotAndApply(responseMovies: response.movies)
             case .failure(let error):
+                self?.makeSnapshotAndApply(responseMovies: [])
                 self?.delegate?.displayError(message: error.description)
             }
             self?.delegate?.setLoadingState(false)
@@ -144,6 +146,11 @@ final class ListViewModel: ListViewModelType {
             var snapshot = ListViewSnapshot()
             snapshot.appendSections([.list])
             self.snapshot = snapshot
+        }
+        if responseMovies.isEmpty {
+            snapshot.appendItems([.empty])
+            delegate?.updateWithSnapshot(snapshot)
+            return
         }
         let movies = MovieFactory(movies: responseMovies, genres: genres).make()
 

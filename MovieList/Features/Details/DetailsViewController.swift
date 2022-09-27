@@ -45,12 +45,14 @@ private extension DetailsViewController {
     }
 
     func setupUI() {
+        navigationItem.setRightBarButton(barButtonItem, animated: true)
+
+        tableView.delegate = self
+        tableView.backgroundColor = .black
         tableView.register(class: DetailsTextViewCell.self)
         tableView.register(class: DetailsImageViewCell.self)
-        navigationItem.setRightBarButton(barButtonItem, animated: true)
         view.addSubview(tableView)
         tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.backgroundColor = .black
         NSLayoutConstraint.activate([
             tableView.topAnchor.constraint(equalTo: view.topAnchor),
             tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
@@ -64,6 +66,19 @@ extension DetailsViewController: DetailsViewModelDelegate {
     func updateWithSnapshot(snapshot: DetailsViewSnapshot, title: String, rateTitle: String) {
         self.title = title
         barButtonItem.title = rateTitle
-        dataSource.apply(snapshot)
+        dataSource.apply(snapshot, animatingDifferences: false)
+    }
+}
+
+extension DetailsViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        let section = viewModel.snapshot.sectionIdentifiers[indexPath.section]
+        let identifier = viewModel.snapshot.itemIdentifiers(inSection: section)[indexPath.row]
+        switch identifier {
+        case .image:
+            return view.frame.width * 1.4
+        case .text:
+            return UITableView.automaticDimension
+        }
     }
 }
